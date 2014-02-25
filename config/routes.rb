@@ -1,4 +1,7 @@
 QnA::Application.routes.draw do
+  resources :quizzes
+
+
   devise_for :users
 
   get "welcome/index"
