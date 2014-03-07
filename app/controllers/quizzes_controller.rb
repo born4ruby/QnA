@@ -1,4 +1,5 @@
 class QuizzesController < ApplicationController
+before_filter :authenticate, :except=> [:welcome]
   # GET /quizzes
   # GET /quizzes.json
   def index
@@ -78,6 +79,13 @@ class QuizzesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to quizzes_url }
       format.json { head :no_content }
+    end
+  end
+
+  private
+    def authenticate
+      authenticate_or_request_with_http_basic do |name,password|
+      name == "administrator" && password == "test"
     end
   end
 end
