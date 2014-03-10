@@ -85,7 +85,7 @@ before_filter :authenticate, :except=> [:welcome]
   private
     def authenticate
       authenticate_or_request_with_http_basic do |name,password|
-      name == "administrator" && password == "test"
+      name == "user1" && password == "testuser"
     end
   end
 end
