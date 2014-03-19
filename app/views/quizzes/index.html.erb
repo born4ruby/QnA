@@ -20,10 +20,11 @@
     <%= link_to 'Show', quiz %> 
     <%= link_to 'Edit', edit_quiz_path(quiz) %> 
     <%= link_to 'Destroy', quiz, method: :delete, data: { confirm: 'Are you sure?' } %> 
+    <br />
+    <br />
   </div>
 <% end %>
 
 <br />
-
 <%= link_to 'New Quiz', new_quiz_path %>
 <%= link_to 'Back', welcome_index_path %>
